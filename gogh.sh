@@ -21,6 +21,7 @@ declare -a THEMES=(
   'adventuretime.sh'
   'afterglow.sh'
   'alien-blood.sh'
+  'aquarium_dark.sh'
   'argonaut.sh'
   'arthur.sh'
   'atom.sh'
@@ -114,6 +115,7 @@ declare -a THEMES=(
   'ic-green-ppl.sh'
   'ic-orange-ppl.sh'
   'idle-toes.sh'
+  'inspired-github.sh'
   'ir-black.sh'
   'jackie-brown.sh'
   'japanesque.sh'
@@ -157,6 +159,7 @@ declare -a THEMES=(
   'nep.sh'
   'neutron.sh'
   'night-owl.sh'
+  'nightfly.sh'
   'nightfox.sh'
   'nightlion-v1.sh'
   'nightlion-v2.sh'
@@ -218,6 +221,7 @@ declare -a THEMES=(
   'spring.sh'
   'square.sh'
   'srcery.sh'
+  'strawberry-light.sh'
   'summer-pop.sh'
   'sundried.sh'
   'sweet-eliverlara.sh'
@@ -288,7 +292,7 @@ set_gogh() {
   export {PROFILE_NAME,PROFILE_SLUG}="$result"
 
   # Evaluate if Gogh was called from local source - i.e cloned repo
-  SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+  SCRIPT_PATH="$( cd "$( dirname "$(readlink -f "${BASH_SOURCE[0]}")" )" && pwd )"
   if [[ -e "${SCRIPT_PATH}/themes/$1" ]]; then
     bash "${SCRIPT_PATH}/themes/$1"
   else
